@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It shows the integration of LaterPay Connector Classic with a Single Page App.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It shows the integration of the LaterPay Connector Script with a Single Page App.
+
+[Live Demo](http://niklas.laterpaydemo.com/lpc-react/)
 
 ## Relevant Code
 The relevant code for this showcase is located in `src/App.js` and in `src/create-config-token.js`.
