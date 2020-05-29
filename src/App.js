@@ -64,10 +64,10 @@ const App = props => {
           <script type="text/javascript" src="https://connector-script.laterpay.net/3-stable/eu/sbx/app-en-us.js"></script>
         </Helmet>
         <Switch>
-          <Route path="/page2" render={routeProps => <Page {...routeProps} pageId={ 2 } switchPage={ () => setPageId(1) } />} />
-          <Route path="/page1" render={routeProps => <Page {...routeProps} pageId={ 1 } switchPage={ () => setPageId(2) } />} />
+          <Route path="/lpc-react/page2" render={routeProps => <Page {...routeProps} pageId={ 2 } switchPage={ () => setPageId(1) } />} />
+          <Route path="/lpc-react/page1" render={routeProps => <Page {...routeProps} pageId={ 1 } switchPage={ () => setPageId(2) } />} />
           <Route path="/">
-            <Redirect to="/page1" />
+            <Redirect to="/lpc-react/page1" />
           </Route>
         </Switch>
       </div>
@@ -75,7 +75,7 @@ const App = props => {
   );
 }
 
-const Page = ({ history, pageId, switchPage }) => {
+const Page = ({ history, match, pageId, switchPage }) => {
   const pagesData = [
     "Pitchfork cloud bread before they sold out tacos austin tofu mumblecore cornhole forage direct trade air plant ethical. I'm baby distillery bitters celiac pug pork belly sustainable. 3 wolf moon XOXO hell of occupy woke unicorn farm-to-table deep v taiyaki mixtape. Meggings tilde hoodie, readymade keffiyeh next level chillwave sartorial vape pitchfork vaporware coloring book kogi truffaut. Freegan PBR&B keffiyeh hell of chicharrones meh fashion axe. Shoreditch vaporware food truck occupy, cray scenester mlkshk man bun.",
     "Four dollar toast cold-pressed pinterest, humblebrag post-ironic master cleanse church-key la croix jianbing snackwave kinfolk. Jianbing copper mug godard tofu tattooed vinyl coloring book. Celiac meggings leggings waistcoat put a bird on it lyft. Pork belly edison bulb af, swag letterpress gentrify kitsch polaroid poke blue bottle. Listicle succulents intelligentsia tousled pork belly. Selfies brooklyn meggings cardigan, migas tumblr vice artisan.",
@@ -88,7 +88,7 @@ const Page = ({ history, pageId, switchPage }) => {
       window.removePaywall();
       setTimeout(() => {
         // Update pathname
-        history.push({ pathname: `/page${pageId > 1 ? 1 : 2}` });
+        history.push({ pathname: `/lpc-react/page${pageId > 1 ? 1 : 2}` });
         // Update pageId state
         switchPage();
       }, 50);
