@@ -53,7 +53,8 @@ const App = props => {
               : ''}
               ${ pageId > 1 ?
                 `"appearance": {
-                  "variant": "raw-white"
+                  "variant": "raw-white",
+                  "logoUrl": "https://hfchronicle.com/sites/default/files/holiday%20flag%20v4%20snowman_0.jpg"
                 },`
               : ''}
               "callbacks": {
